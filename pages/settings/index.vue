@@ -38,7 +38,8 @@
 
 <script>
 export default {
-  name: "setting-index"
+  name: "setting-index",
+  middleware: "authenticated",
 }
 </script>
 

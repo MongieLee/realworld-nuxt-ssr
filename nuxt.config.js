@@ -1,6 +1,11 @@
 export default {
+    plugins: [
+        "~plugins/request.js",
+        "~plugins/time.js"
+    ],
     router: {
-        linkActiveClass:"active",
+        middleware: 'unKnowRoute',
+        linkActiveClass: "active",
         extendRoutes(routes, resolve) {
             // 清除默认生成的路由表规则
             routes.splice(0)
@@ -8,43 +13,43 @@ export default {
                 {
                     path: '/',
                     component: resolve(__dirname, 'pages/layout/'),
-                    children:[
+                    children: [
                         {
-                            path:"",
-                            name:"home",
-                            component:resolve(__dirname,'pages/home/')
+                            path: "",
+                            name: "home",
+                            component: resolve(__dirname, 'pages/home/')
                         },
                         {
-                            path:"/login",
-                            name:"login",
-                            component:resolve(__dirname,'pages/login/')
+                            path: "/login",
+                            name: "login",
+                            component: resolve(__dirname, 'pages/login/')
                         },
                         {
-                            path:"/register",
-                            name:"register",
-                            component:resolve(__dirname,'pages/login/')
+                            path: "/register",
+                            name: "register",
+                            component: resolve(__dirname, 'pages/login/')
                         },
                         {
-                            path:"/profile/:username",
-                            name:"profile",
-                            component:resolve(__dirname,'pages/profile/')
+                            path: "/profile/:username",
+                            name: "profile",
+                            component: resolve(__dirname, 'pages/profile/')
                         },
                         {
-                            path:"/settings",
-                            name:"setting",
-                            component:resolve(__dirname,'pages/settings/')
+                            path: "/settings",
+                            name: "setting",
+                            component: resolve(__dirname, 'pages/settings/')
                         },
                         {
-                            path:"/editor",
-                            name:"editor",
-                            component:resolve(__dirname,'pages/editor/')
+                            path: "/editor",
+                            name: "editor",
+                            component: resolve(__dirname, 'pages/editor/')
                         },
                         {
-                            path:"/article/:id",
-                            name:"article",
-                            component:resolve(__dirname,'pages/article/')
+                            path: "/articles/:id",
+                            name: "articles",
+                            component: resolve(__dirname, 'pages/article/')
                         }
-                    ]
+                    ],
                 }
             ]
             routes.push(...customRoutes)

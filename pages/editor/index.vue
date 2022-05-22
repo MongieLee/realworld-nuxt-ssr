@@ -36,7 +36,9 @@
 
 <script>
 export default {
-  name: "editor.vue"
+  name: "editor",
+  middleware: "authenticated",
+
 }
 </script>
 
